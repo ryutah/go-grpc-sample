@@ -4,6 +4,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"net"
 
@@ -19,7 +20,7 @@ func (g *greeterServer) SayHello(ctx context.Context, r *pb.HelloRequest) (*pb.H
 	log.Printf("Get Message: %#v", r)
 
 	return &pb.HelloReply{
-		Message: "Hello, World!!",
+		Message: fmt.Sprintf("Hello, %s!", r.Name),
 	}, nil
 }
 
