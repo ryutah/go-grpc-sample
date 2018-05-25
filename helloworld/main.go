@@ -1,4 +1,4 @@
-//go:generate protoc -I ./helloworld --java_out ./helloworld/java --js_out ./helloworld/js --python_out ./helloworld/python --go_out=plugins=grpc:./helloworld/go ./helloworld/helloworld.proto
+//go:generate protoc -I ./helloworld --go_out=plugins=grpc:./helloworld/go ./helloworld/helloworld.proto
 
 package main
 
@@ -8,7 +8,7 @@ import (
 	"log"
 	"net"
 
-	pb "github.com/ryutah/go-grpc-sample/helloworld/go"
+	pb "github.com/ryutah/go-grpc-sample/helloworld/helloworld/go"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
